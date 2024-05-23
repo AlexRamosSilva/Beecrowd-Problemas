@@ -1,16 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+int maior(int a, int b){
+    return (a + b + abs(a - b))/2;
+}
 
 int main(){
-    double A, B, C;
-    const double PI = 3.14159;
+    int a, b, c, resposta;
 
-    scanf("%lf\n%lf\n%lf", &A, &B, &C);
+    scanf("%d %d %d", &a, &b, &c);
+    
+    resposta = maior(a, maior(b, c));
 
-    printf("TRIANGULO: %.3lf\n", (A * C)/2.0);
-    printf("CIRCULO: %.3lf\n", PI * C * C);
-    printf("TRAPEZIO: %.3lf\n", (A + B)/2.0 * C);
-    printf("QUADRADO: %.3lf\n", B * B);
-    printf("RETANGULO: %.3lf\n", A * B);
+    printf("%d eh o maior\n", resposta);
 
     return 0;
 }
