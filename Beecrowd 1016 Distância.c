@@ -1,14 +1,11 @@
 #include <stdio.h>
-#include <math.h>
 
 int main(){
-    double x1, y1, x2, y2, distancia;
+    int X;
 
-    scanf("%lf %lf\n%lf %lf", &x1, &y1, &x2, &y2);
+    scanf("%d", &X);
 
-    distancia = sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
-
-    printf("%.4lf\n", distancia);
+    printf("%d minutos\n", 2 * X);
 
     return 0;
 }
