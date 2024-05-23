@@ -1,16 +1,24 @@
 #include <stdio.h>
 
 int main(){
-    int dias, anos, meses;
+    int notas[] = {10000, 5000, 2000, 1000, 500, 200};
+    int moedas[] = {100, 50, 25, 10, 5, 1};
+    int reais, centavos;
 
-    scanf("%d", &dias);
+    scanf("%d.%d", &reais, &centavos);
+    reais = 100 * reais + centavos;
 
-    anos = dias/365;
-    dias %= 365;
-    meses = dias/30;
-    dias %= 30;
+    printf("NOTAS:\n");
+    for(int i = 0; i < 6; ++i){
+        printf("%d nota(s) de R$ %.2lf\n", reais/notas[i], notas[i]/100.0);
+        reais %= notas[i];
+    }
 
-    printf("%d ano(s)\n%d mes(es)\n%d dia(s)\n", anos, meses, dias);
+    printf("MOEDAS:\n");
+    for(int i = 0; i < 6; ++i){
+        printf("%d moeda(s) de R$ %.2lf\n", reais/moedas[i], moedas[i]/100.0);
+        reais %= moedas[i];
+    }
 
     return 0;
 }
